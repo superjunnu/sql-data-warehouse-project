@@ -29,7 +29,7 @@ BEGIN
 
 		PRINT '-------------------------------------------';
 		PRINT 'Loading CRM Tables';
-		PRINT '-------------------------------------------'
+		PRINT '-------------------------------------------';
 		
 		SET @batch_start_time = GETDATE();
 		SET @start_time = GETDATE();
@@ -82,8 +82,8 @@ BEGIN
 		PRINT '--------------------------------';
 
 		PRINT '-------------------------------------------';
-		PRINT 'Loading Erp Tables';
-		PRINT '-------------------------------------------'
+		PRINT 'Loading ERP Tables';
+		PRINT '-------------------------------------------';
 
 		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.erp_cust_az12';
