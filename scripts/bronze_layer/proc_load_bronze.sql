@@ -22,7 +22,8 @@ Usage example:
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN
 	DECLARE @start_time DATETIME, @end_time DATETIME, @batch_start_time DATETIME, @batch_end_time DATETIME;
-	BEGIN TRY	
+	BEGIN TRY
+		SET @batch_start_time = GETDATE();
 		PRINT '*******************************************';
 		PRINT 'Loading Bronze Layer';
 		PRINT '*******************************************';
@@ -31,7 +32,6 @@ BEGIN
 		PRINT 'Loading CRM Tables';
 		PRINT '-------------------------------------------';
 		
-		SET @batch_start_time = GETDATE();
 		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.crm_cust_info';
 		TRUNCATE TABLE bronze.crm_cust_info;
